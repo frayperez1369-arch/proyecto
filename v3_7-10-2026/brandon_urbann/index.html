@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda de Ropa</title>
+</head>
+<body>
+    <h2>Ingresar Al Sistema - Tienda de Ropa</h2>
+
+    <form action="usuario.php" method="POST">
+        <label>Tipo de acceso:</label><br>
+        <select name="tipo_acceso" required>
+            <option value="select">Seleccionar Rol</option>
+            <option value="Administrador">Administrador</option>
+            <option value="Empleado">Empleado</option>
+        </select><br><br>
+        <label>Usuario:</label><br>
+        <input type="text" name="username" required><br><br>
+
+        <label>Contraseña:</label><br>
+        <input type="password" name="password" required><br><br>
+
+        
+
+        <button type="submit">Ingresar</button>
+    </form>
+</body>
+</html>

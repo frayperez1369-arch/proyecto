@@ -1,0 +1,571 @@
+/* =========================================
+   BRANDON URBAN - Estilos generales
+   Complemento mínimo sobre Bootstrap 5
+   ========================================= */
+ 
+/* Fondo gris claro y tipografía base de todas las páginas. */
+body {
+    background-color: #f4f5f7;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ 
+/* Sidebar lateral */
+/* Barra lateral fija a la izquierda: 240 px de ancho, alto de la pantalla y fondo negro. */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    background-color: #1a1a1a;
+}
+ 
+/* Enlaces de la barra lateral: estado normal. */
+.sidebar .nav-link {
+    color: #cfcfcf;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+ 
+/* Enlaces al pasar el mouse por encima. */
+.sidebar .nav-link:hover {
+    background-color: #2b2b2b;
+    color: #ffffff;
+}
+ 
+/* Opción de la página actual (resaltada en rojo). */
+.sidebar .nav-link.active {
+    background-color: #dc3545;
+    color: #ffffff;
+    font-weight: 600;
+}
+ 
+/* Marca BRANDON URBAN */
+.brand-nombre {
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+ 
+/* Tarjetas */
+.card {
+    border: none;
+    border-radius: 10px;
+}
+ 
+.card-header {
+    border-bottom: 1px solid #ececec;
+    border-radius: 10px 10px 0 0 !important;
+}
+ 
+/* Tablas */
+.table thead th {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+}
+ 
+.table tbody tr:hover {
+    background-color: #fdf2f3;
+}
+ 
+/* =========================================
+   Menú principal (menu.php)
+   ========================================= */
+ 
+/* Barra superior oscura */
+.menu-nav {
+    background-color: #1a1a1a;
+    border-bottom: 3px solid #dc3545;
+}
+ 
+/* Encabezado de bienvenida */
+.menu-hero {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ececec;
+}
+ 
+/* Título de cada sección */
+.menu-seccion {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #6c757d;
+    margin-bottom: 12px;
+}
+ 
+/* Tarjeta-botón de cada opción */
+.menu-card {
+    display: flex;
+    background-color: #ffffff;
+    border-left: 4px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+ 
+.menu-card:hover {
+    transform: translateY(-3px);
+    border-left-color: #dc3545;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12) !important;
+}
+ 
+/* Cuadro del icono */
+.menu-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    background-color: #fdf2f3;
+    color: #dc3545;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+ 
+.menu-icon.oscuro {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+ 
+.menu-card:hover .menu-icon {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+ 
+/* ---------- Resumen del menú (tarjetas y gráficos) ---------- */
+ 
+/* Número grande de las tarjetas de resumen */
+.stat-num {
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+ 
+/* Cuadro de icono de las tarjetas de resumen */
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+ 
+.stat-icon.rojo    { background-color: #dc3545; }
+.stat-icon.verde   { background-color: #198754; }
+.stat-icon.naranja { background-color: #fd7e14; }
+ 
+/* Icono circular de la actividad reciente */
+.act-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #ffffff;
+}
+ 
+.act-icon.rojo   { background-color: #dc3545; }
+.act-icon.oscuro { background-color: #1a1a1a; }
+ 
+/* Contenedor de gráficos */
+.chart-box {
+    position: relative;
+    height: 150px;
+}
+ 
+.chart-box.ancho {
+    height: 260px;
+}
+ 
+/* Texto en el centro de la dona */
+.chart-centro {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    line-height: 1.1;
+}
+ 
+.chart-centro strong { font-size: 1.4rem; }
+.chart-centro span   { font-size: 0.75rem; color: #6c757d; }
+ 
+/* Punto de color de la leyenda */
+.punto {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
+    border-radius: 50%;
+}
+
+/* =========================================
+   Estructura de las páginas
+   ========================================= */
+
+/* Sidebar + contenido */
+.layout {
+    display: flex;
+}
+
+/* Área de contenido: ocupa todo el espacio que deja la barra lateral. */
+.contenido {
+    flex-grow: 1;
+    min-width: 0;
+    padding: 1.5rem;
+}
+
+/* =========================================
+   Logo circular (login, sidebar y menú)
+   ========================================= */
+.logo-circulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.logo-circulo.con-borde { border: 1px solid #dee2e6; }
+
+.logo-circulo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 4px;
+}
+
+/* Tamaños disponibles del logo circular. */
+.logo-44 { width: 48px; height: 48px; }
+.logo-64 { width: 84px; height: 84px; }
+.logo-72 { width: 96px; height: 96px; }
+
+/* Letra de respaldo si no existe logo.png */
+.logo-letra {
+    display: none;
+    font-weight: 700;
+    color: #212529;
+}
+
+.logo-44 .logo-letra { font-size: 1.1rem; }
+.logo-64 .logo-letra { font-size: 1.5rem; }
+.logo-72 .logo-letra { font-size: 1.75rem; }
+
+/* =========================================
+   Login (index.html)
+   ========================================= */
+.login-pagina {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    overflow: hidden;
+    background-color: #f4f5f7;
+    font-family: 'DM Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Corte diagonal: banda roja detrás y panel negro encima (con el carrusel dentro) */
+.login-corte-rojo,
+.login-corte-negro {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 78% 100%, 0 100%);
+}
+
+.login-corte-rojo  { width: 62%; background-color: #dc3545; }
+.login-corte-negro { width: 60%; background-color: #1a1a1a; }
+
+/* ---------- Carrusel del local ---------- */
+/* El carrusel ocupa todo el alto del panel negro. */
+.login-carrusel,
+.login-carrusel .carousel-inner,
+.login-carrusel .carousel-item {
+    height: 100%;
+}
+
+/* Fondo de respaldo (negro con puntos) por si falta la foto */
+.login-carrusel .carousel-item {
+    background-color: #1a1a1a;
+    background-image: radial-gradient(#363636 2px, transparent 2px);
+    background-size: 26px 26px;
+}
+
+.slide-foto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Oscurece las fotos para que el logo y el nombre se lean bien */
+    filter: brightness(0.45);
+}
+
+.login-carrusel .carousel-indicators {
+    z-index: 3;
+    justify-content: flex-start;
+    margin: 0 0 2rem 3rem;
+}
+
+.login-carrusel .carousel-indicators [data-bs-target] {
+    width: 34px;
+    height: 4px;
+    border: 0;
+    background-color: #ffffff;
+}
+
+.login-carrusel .carousel-indicators .active { background-color: #dc3545; }
+
+/* ---------- Marca: logo y nombre encima del carrusel ---------- */
+.login-marca {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 52%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 3rem;
+    text-align: center;
+}
+
+.login-logo {
+    width: 230px;
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 6px solid #dc3545;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.login-logo img {
+    width: 190px;
+    height: 190px;
+    object-fit: contain;
+}
+
+.login-nombre {
+    margin: 0;
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-weight: 400;
+    font-size: clamp(2.75rem, 6vw, 4.75rem);
+    letter-spacing: 5px;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Subtítulo opcional bajo el nombre de la marca. */
+.login-sub {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #dee2e6;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Lado derecho: solo el formulario ---------- */
+.login-panel {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 4rem 2rem 0;
+}
+
+/* Tarjeta blanca que contiene el formulario de login. */
+.login-tarjeta {
+    width: 100%;
+    max-width: 390px;
+    padding: 34px;
+    border-radius: 14px;
+    background-color: #ffffff;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+/* Título «Ingresar al sistema». */
+.login-titulo {
+    margin: 0 0 4px;
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-weight: 400;
+    font-size: 2.1rem;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+}
+
+.login-ayuda {
+    margin: 0 0 1.4rem;
+    color: #6c757d;
+}
+
+/* Botón «Ingresar». */
+.login-boton {
+    height: 50px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Elegir rol con dos botones */
+.rol-grupo {
+    display: flex;
+    gap: 12px;
+}
+
+.rol-opcion {
+    position: relative;
+    flex: 1;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* El radio real se oculta: la caja de abajo hace de botón. */
+.rol-opcion input {
+    position: absolute;
+    opacity: 0;
+}
+
+.rol-caja {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 8px;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #495057;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.rol-caja i { font-size: 1.4rem; }
+
+.rol-opcion:hover .rol-caja { border-color: #ee9aa3; }
+
+/* Caja del rol seleccionado: borde y fondo rojizos. */
+.rol-opcion input:checked + .rol-caja {
+    border-color: #dc3545;
+    background-color: #fdf2f3;
+    color: #dc3545;
+}
+
+.rol-opcion input:focus-visible + .rol-caja {
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+}
+
+/* Campos con icono a la izquierda */
+.campo-icono { position: relative; }
+
+.campo-icono > i {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    color: #6c757d;
+    pointer-events: none;
+}
+
+.campo-icono .form-control {
+    height: 46px;
+    padding-left: 2.75rem;
+}
+
+.campo-icono .form-control.con-boton { padding-right: 2.75rem; }
+
+.campo-icono .form-control:focus {
+    border-color: #ee9aa3;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15);
+}
+
+/* Ojito para ver la contraseña */
+.ver-clave {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    padding: 8px 10px;
+    border: 0;
+    background: none;
+    color: #6c757d;
+    cursor: pointer;
+}
+
+.ver-clave:hover { color: #dc3545; }
+
+.campo-icono .ver-clave i {
+    position: static;
+    transform: none;
+    pointer-events: auto;
+    color: inherit;
+}
+
+/* Pantallas bajas (laptops): marca y tarjeta más compactas para que todo quepa sin scroll */
+@media (max-height: 820px) {
+    .login-logo { width: 180px; height: 180px; }
+    .login-logo img { width: 150px; height: 150px; }
+    .login-nombre { font-size: 3.4rem; }
+    .login-tarjeta { padding: 28px 30px; }
+}
+
+/* Login en pantallas pequeñas: sin diagonal ni carrusel, marca arriba y formulario abajo */
+@media (max-width: 991.98px) {
+    .login-pagina {
+        flex-direction: column;
+        background-color: #1a1a1a;
+    }
+
+    .login-corte-rojo,
+    .login-corte-negro { display: none; }
+
+    .login-marca {
+        flex: none;
+        gap: 10px;
+        padding: 2rem 1rem 1rem;
+    }
+
+    .login-logo { width: 130px; height: 130px; }
+    .login-logo img { width: 106px; height: 106px; }
+    .login-nombre { font-size: 3rem; }
+
+    .login-panel {
+        margin-left: 0;
+        padding: 1rem 1rem 2.5rem;
+    }
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 767.98px) {
+    .layout { flex-direction: column; }
+
+    /* Barra lateral fija a la izquierda: 240 px de ancho, alto de la pantalla y fondo negro. */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+}
